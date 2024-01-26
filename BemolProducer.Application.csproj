@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <UserSecretsId>f0f44719-fa02-41c2-bc43-d4215d6eae9e</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>.</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="BemolProducer.Domain\**" />
+    <Compile Remove="BemolProducer.Infra.CrossCutting\**" />
+    <Compile Remove="BemolProducer.Infra.Data\**" />
+    <Compile Remove="BemolProducer.Service\**" />
+    <Content Remove="BemolProducer.Domain\**" />
+    <Content Remove="BemolProducer.Infra.CrossCutting\**" />
+    <Content Remove="BemolProducer.Infra.Data\**" />
+    <Content Remove="BemolProducer.Service\**" />
+    <EmbeddedResource Remove="BemolProducer.Domain\**" />
+    <EmbeddedResource Remove="BemolProducer.Infra.CrossCutting\**" />
+    <EmbeddedResource Remove="BemolProducer.Infra.Data\**" />
+    <EmbeddedResource Remove="BemolProducer.Service\**" />
+    <None Remove="BemolProducer.Domain\**" />
+    <None Remove="BemolProducer.Infra.CrossCutting\**" />
+    <None Remove="BemolProducer.Infra.Data\**" />
+    <None Remove="BemolProducer.Service\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Collection" Version="9.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.ExpressionMapping" Version="6.0.4" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="Azure.Messaging.ServiceBus" Version="7.17.2" />
+    <PackageReference Include="Microsoft.Azure.ServiceBus" Version="5.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
+    <PackageReference Include="MongoDB.Bson" Version="2.23.1" />
+    <PackageReference Include="MongoDB.Driver" Version="2.23.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="BemolProducer.Domain\BemolProducer.Domain.csproj" />
+    <ProjectReference Include="BemolProducer.Service\BemolProducer.Service.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,6 @@
+@BemolProducer_HostAddress = http://localhost:5030
+
+GET {{BemolProducer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
