@@ -1,4 +1,5 @@
 ﻿using BemolProducer.Domain;
+using BemolProducer.Domain.Entities;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 

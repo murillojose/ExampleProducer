@@ -10,6 +10,7 @@ namespace BemolProducer.Application.Profiles
         {
             CreateMap<Produto, ProdutoDTO>();
             CreateMap<ProdutoDTO, Produto>();
+
         }
     }
 }

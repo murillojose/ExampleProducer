@@ -1,6 +1,4 @@
-﻿
-
-using BemolProducer.Domain;
+﻿using BemolProducer.Domain;
 using BemolProducer.Domain.Interfaces;
 
 namespace BemolProducer.Service

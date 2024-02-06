@@ -8,5 +8,7 @@ namespace BemolProducer.Domain
     {
         [BsonElement("Nome")]
         public string? Nome { get; set; }
+        [BsonElement("Processed")]
+        public bool processed { get; set; }
     }
 }
