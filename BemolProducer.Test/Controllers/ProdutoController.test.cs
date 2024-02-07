@@ -2,8 +2,10 @@
 using AutoMapper;
 using BemolProducer.Controllers;
 using BemolProducer.Domain;
+using BemolProducer.Domain.DTOs;
 using BemolProducer.Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Azure.Amqp.Transaction;
 using Microsoft.Azure.ServiceBus;
 using Moq;
 using NUnit.Framework;
@@ -42,6 +44,30 @@ namespace BemolProducer.Test.Controllers
             Assert.IsNotNull(okResult);
             Assert.AreEqual(200, okResult.StatusCode);
         }
-        
+
+        [Test]
+        public async Task PostProduto_ReturnsCreatedProduct()
+        {
+            // Arrange
+            var produto = _fixture.Create<Produto>();
+            var produtoDTO = _fixture.Create<ProdutoDTO>();
+            _mapper.Setup(mapper => mapper.Map<ProdutoDTO>(produto)).Returns(produtoDTO);
+
+            // Act
+            var result = await _produtosController.PostProduto(produto);
+
+            // Assert
+            var createdResult = result as OkObjectResult;
+            Assert.IsNotNull(createdResult);
+            Assert.AreEqual(200, createdResult.StatusCode);
+
+            var createdProduto = createdResult.Value as Produto;
+            Assert.IsNotNull(createdProduto);
+            Assert.AreEqual(produto.Id, createdProduto.Id);
+            Assert.AreEqual(produto.Nome, createdProduto.Nome);
+
+            _produtoService.Verify(service => service.CreateAsync(produto), Times.Once);
+            _queueClient.Verify(queue => queue.SendAsync(It.IsAny<Message>()), Times.Once);
+        }
     }
 }
