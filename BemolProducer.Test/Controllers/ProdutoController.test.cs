@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.ServiceBus;
 using Moq;
 using NUnit.Framework;
+using Queue.Interface;
 
 namespace BemolProducer.Test.Controllers
 {
@@ -14,14 +15,14 @@ namespace BemolProducer.Test.Controllers
     {
         private ProdutosController _produtosController;
         private Mock<IProdutoService> _produtoService;
-        private Mock<QueueClient> _queueClient;
+        private Mock<IQueueClientWrapper> _queueClient;
         private Mock<IMapper> _mapper;
         private Fixture _fixture;
         [SetUp]
         public void Setup()
         {
             _mapper = new Mock<IMapper>();
-            _queueClient = new Mock<QueueClient>("connectionString", "queueName");
+            _queueClient = new Mock<IQueueClientWrapper>();
             _produtoService = new Mock<IProdutoService>();
             _produtosController = new ProdutosController(_produtoService.Object, _queueClient.Object, _mapper.Object);
             _fixture = new Fixture();

@@ -29,6 +29,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Test", "5 - Test", "{23
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BemolProducer.Test", "BemolProducer.Test\BemolProducer.Test.csproj", "{E6F69947-0192-47C9-8B46-44D5F4A72A28}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.3 - QueueClient", "4.3 - QueueClient", "{70204833-EFFE-4BA1-AB45-F84BAA4133D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueueClient", "Bemol.Infra.Queue\QueueClient\QueueClient.csproj", "{9ADC7F45-5367-43A3-8790-A5A74F1E2B4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +63,10 @@ Global
 		{E6F69947-0192-47C9-8B46-44D5F4A72A28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6F69947-0192-47C9-8B46-44D5F4A72A28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6F69947-0192-47C9-8B46-44D5F4A72A28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ADC7F45-5367-43A3-8790-A5A74F1E2B4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ADC7F45-5367-43A3-8790-A5A74F1E2B4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ADC7F45-5367-43A3-8790-A5A74F1E2B4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ADC7F45-5367-43A3-8790-A5A74F1E2B4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +80,8 @@ Global
 		{6EAA6C21-E1AB-4294-9DEC-6BE2C94BDBDB} = {7A0A4D87-22A7-40FE-A3B6-286977DD4FFA}
 		{6171C9D1-C580-4138-B61E-D7AF568099EF} = {C972F067-2E2D-4B3F-A744-0CCF0A1C7B91}
 		{E6F69947-0192-47C9-8B46-44D5F4A72A28} = {230B0349-51CF-4C6E-A1AA-DB5D479519C8}
+		{70204833-EFFE-4BA1-AB45-F84BAA4133D0} = {EA2F67DB-1A56-4D7E-85EF-2565624ECE81}
+		{9ADC7F45-5367-43A3-8790-A5A74F1E2B4F} = {70204833-EFFE-4BA1-AB45-F84BAA4133D0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D09B576A-C1A5-44F5-87B1-21E541EE0C87}

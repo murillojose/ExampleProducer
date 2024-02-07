@@ -5,6 +5,7 @@ using BemolProducer.Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.ServiceBus;
 using Newtonsoft.Json;
+using Queue.Interface;
 
 namespace BemolProducer.Controllers
 {
@@ -13,10 +14,10 @@ namespace BemolProducer.Controllers
     public class ProdutosController : ControllerBase
     {
         private readonly IProdutoService _produtoService;
-        private readonly QueueClient _queueClient;
+        private readonly IQueueClientWrapper _queueClient;
         private readonly IMapper _mapper;
 
-        public ProdutosController(IProdutoService produtoService, QueueClient queueClient, IMapper mapper)
+        public ProdutosController(IProdutoService produtoService, IQueueClientWrapper queueClient, IMapper mapper)
         {
             _produtoService = produtoService;
             _queueClient = queueClient;

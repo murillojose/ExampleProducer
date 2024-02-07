@@ -11,21 +11,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Bemol.Infra.Queue\**" />
     <Compile Remove="BemolProducer.Domain\**" />
     <Compile Remove="BemolProducer.Infra.CrossCutting\**" />
     <Compile Remove="BemolProducer.Infra.Data\**" />
     <Compile Remove="BemolProducer.Service\**" />
     <Compile Remove="BemolProducer.Test\**" />
+    <Content Remove="Bemol.Infra.Queue\**" />
     <Content Remove="BemolProducer.Domain\**" />
     <Content Remove="BemolProducer.Infra.CrossCutting\**" />
     <Content Remove="BemolProducer.Infra.Data\**" />
     <Content Remove="BemolProducer.Service\**" />
     <Content Remove="BemolProducer.Test\**" />
+    <EmbeddedResource Remove="Bemol.Infra.Queue\**" />
     <EmbeddedResource Remove="BemolProducer.Domain\**" />
     <EmbeddedResource Remove="BemolProducer.Infra.CrossCutting\**" />
     <EmbeddedResource Remove="BemolProducer.Infra.Data\**" />
     <EmbeddedResource Remove="BemolProducer.Service\**" />
     <EmbeddedResource Remove="BemolProducer.Test\**" />
+    <None Remove="Bemol.Infra.Queue\**" />
     <None Remove="BemolProducer.Domain\**" />
     <None Remove="BemolProducer.Infra.CrossCutting\**" />
     <None Remove="BemolProducer.Infra.Data\**" />
@@ -48,6 +52,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="Bemol.Infra.Queue\QueueClient\QueueClient.csproj" />
     <ProjectReference Include="BemolProducer.Domain\BemolProducer.Domain.csproj" />
     <ProjectReference Include="BemolProducer.Service\BemolProducer.Service.csproj" />
   </ItemGroup>

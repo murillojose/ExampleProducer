@@ -5,6 +5,8 @@ using BemolProducer.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Azure.ServiceBus;
 using Microsoft.IdentityModel.Tokens;
+using Queue.Interface;
+using Queue.Queue;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,11 +22,13 @@ builder.Services.AddScoped<IProdutoService, ProdutoService>();
 builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>();
 
 
-builder.Services.AddSingleton<QueueClient>(x =>
+builder.Services.AddSingleton<IQueueClientWrapper>(x =>
 {
     var connectionString = builder.Configuration["AzureServiceBus:ConnectionString"];
     var queueName = builder.Configuration["AzureServiceBus:QueueName"];
-    return new QueueClient(connectionString, queueName);
+    var queueClient = new QueueClient(connectionString, queueName);
+    return new QueueClientWrapper(queueClient);
+  
 });
 
 
