@@ -24,13 +24,14 @@ namespace BemolProducer.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Produto>> GetProdutos()
+        public async Task<IActionResult> GetProdutos()
         {
-            return await _produtoService.GetAllAsync();
+            var produtos = await _produtoService.GetAllAsync();
+            return Ok(produtos);
         }
 
         [HttpPost]
-        public async Task<Produto> PostProduto(Produto produto)
+        public async Task<IActionResult> PostProduto(Produto produto)
         {
             //Cria o produto na base
             if (produto != null)
@@ -48,7 +49,7 @@ namespace BemolProducer.Controllers
             var message = new Message(System.Text.Encoding.UTF8.GetBytes(produtoJson));           
             await _queueClient.SendAsync(message);
 
-            return produto;            
+            return Ok(produto);            
         }
     }
 }
