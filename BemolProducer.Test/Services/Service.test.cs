@@ -5,7 +5,7 @@ using BemolProducer.Service;
 using Moq;
 using NUnit.Framework;
 
-namespace BemolProducer.Test
+namespace BemolProducer.Test.Services
 {
     public class ServiceTest
     {

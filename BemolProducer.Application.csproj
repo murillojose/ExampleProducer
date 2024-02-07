@@ -15,18 +15,22 @@
     <Compile Remove="BemolProducer.Infra.CrossCutting\**" />
     <Compile Remove="BemolProducer.Infra.Data\**" />
     <Compile Remove="BemolProducer.Service\**" />
+    <Compile Remove="BemolProducer.Test\**" />
     <Content Remove="BemolProducer.Domain\**" />
     <Content Remove="BemolProducer.Infra.CrossCutting\**" />
     <Content Remove="BemolProducer.Infra.Data\**" />
     <Content Remove="BemolProducer.Service\**" />
+    <Content Remove="BemolProducer.Test\**" />
     <EmbeddedResource Remove="BemolProducer.Domain\**" />
     <EmbeddedResource Remove="BemolProducer.Infra.CrossCutting\**" />
     <EmbeddedResource Remove="BemolProducer.Infra.Data\**" />
     <EmbeddedResource Remove="BemolProducer.Service\**" />
+    <EmbeddedResource Remove="BemolProducer.Test\**" />
     <None Remove="BemolProducer.Domain\**" />
     <None Remove="BemolProducer.Infra.CrossCutting\**" />
     <None Remove="BemolProducer.Infra.Data\**" />
     <None Remove="BemolProducer.Service\**" />
+    <None Remove="BemolProducer.Test\**" />
   </ItemGroup>
 
   <ItemGroup>
